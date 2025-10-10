@@ -1,0 +1,14 @@
+{
+  "name": "nodejs-calculator",
+  "version": "1.0.0",
+  "description": "Simple calculator API with automated tests using GitHub Actions",
+  "main": "src/calculator.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
