@@ -26,7 +26,7 @@ jobs:
 
       # Step 3: Install dependencies from package-lock.json
       - name: Install dependencies from lock file
-        run: npm ci
+        run: npm install
 
       # Step 4: Run all Jest tests (unit + integration) with verbose logging
       - name: Run automated tests with verbose report
