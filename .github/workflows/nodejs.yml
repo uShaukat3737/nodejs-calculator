@@ -11,19 +11,23 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [16.x, 18.x]
+        node-version: [16.x, 18.x]   # Run tests on both Node versions
 
     steps:
+      # Step 1: Checkout repository to fetch latest code
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Step 2: Setup Node.js environment
       - name: Setup Node.js environment
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install dependencies
-        run: npm install
+      # Step 3: Install dependencies from package-lock.json
+      - name: Install dependencies from lock file
+        run: npm ci
 
-      - name: Run automated tests
-        run: npm test
+      # Step 4: Run all Jest tests (unit + integration) with verbose logging
+      - name: Run automated tests with verbose report
+        run: npm test -- --verbose
